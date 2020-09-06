@@ -6,7 +6,8 @@ on:
   pull_request:
     types: [opened]
     branches:
-      - development master
+      - development
+      - master
 env:
   # For linking a repo project
   #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
