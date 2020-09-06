@@ -13,4 +13,4 @@ This is a brand new repository that has been created.
     2. _Auto Assign_ - Using [Auto Assign](https://github.com/apps/auto-assign) (must be added to your organization or GitHub user) this repos default behavior is for it to assign the creator of a pull request to the author of the pull request
 
 ### Created by:
-    [Cassio Hudson](https://github.com/Cassioblu55)
+[Cassio Hudson](https://github.com/Cassioblu55)
