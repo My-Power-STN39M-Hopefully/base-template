@@ -12,7 +12,7 @@ env:
 jobs:
   assign_one_project:
     runs-on: ubuntu-latest
-    name: Assign to iPhone automation Project
+    name: Assign to Default Project
     steps:
     - name: Assign NEW issues and pull request to project
       uses: srggrs/assign-one-project-github-action@1.2.0
