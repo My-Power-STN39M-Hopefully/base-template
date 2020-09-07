@@ -12,12 +12,12 @@ git remote set-head origin development
 3. Add a dev-ops label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
     * Label name: dev-ops
     * Description: Dev Ops issue or pull request
-    * Color: #adfc7b
+    * Color: adfc7b
     
 4. (Optional) Add a models label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
     * Label name: models
     * Description: Models enhancement
-    * Color: #ea88d5
+    * Color: ea88d5
 
 ## Out of the Box Features
 
