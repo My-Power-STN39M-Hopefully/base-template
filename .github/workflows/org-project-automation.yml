@@ -1,0 +1,19 @@
+name: Auto Assign Issues and PRs to Main Org Project
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+env:
+  MY_GITHUB_TOKEN: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: 'Assign to Master project: Cassio is Great Indeed'
+    steps:
+    - name: Assign NEW issues and pull request to Cassio is Great Indeed
+      uses: srggrs/assign-one-project-github-action@1.2.0
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/orgs/Cassio-is-Great/projects/5'
