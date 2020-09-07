@@ -9,6 +9,16 @@ git remote set-head origin development
 ```
 2. Update your .vscode/settings.json colors to be different from your other workspaces. Use the VsCode [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) to change your colors easily.
 
+3. Add a dev-ops label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
+    * Label name: dev-ops
+    * Description: Dev Ops issue or pull request
+    * Color: #adfc7b
+    
+4. (Optional) Add a models label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
+    * Label name: models
+    * Description: Models enhancement
+    * Color: #ea88d5
+
 ## Out of the Box Features
 
 1. **Issue Templates** - Default created issue templates
