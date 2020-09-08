@@ -5,15 +5,13 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
-env:
-  MY_GITHUB_TOKEN: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
+
 jobs:
-  assign_one_project:
+  automate-project-columns:
     runs-on: ubuntu-latest
-    name: 'Assign to Master project: Cassio is Great Indeed'
     steps:
-    - name: Assign NEW issues and pull request to Cassio is Great Indeed
-      uses: srggrs/assign-one-project-github-action@1.2.0
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/orgs/Cassio-is-Great/projects/5'
+      - uses: alex-page/github-project-automation-plus@v0.2.4
+        with:
+          project: 'https://github.com/orgs/Cassio-is-Great/projects/5'
+          column: 'To Do'
+          repo-token: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
