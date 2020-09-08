@@ -29,7 +29,7 @@ _Must be done **once** for the **entire organization**. Please remove instructio
 
 1. Create a user GitHub token [here](https://github.com/settings/tokens/new). Make sure to copy your new personal access token now. **You won’t be able to see it again!**
 2. Add token to: https://github.com/organizations/[org-name]/settings/secrets under the name: `AUTOMATE_ISSUES_PULL_REQUESTS`
-3. Add GitHub app [auto-assign bot](https://github.com/apps/auto-assign) to [organization secret](../settings/installations)
+3. Add GitHub app [auto-assign bot](https://github.com/apps/auto-assign) to https://github.com/organizations/[org-name]/settings/installations
 
 ## Base Template Features
 
