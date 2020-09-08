@@ -1,4 +1,4 @@
-name: "[Auto, Issues, PRs] add to Main Repo Project"
+name: "[Auto] Repo Project Main add on Issues/PRs"
 
 on:
   issues:
