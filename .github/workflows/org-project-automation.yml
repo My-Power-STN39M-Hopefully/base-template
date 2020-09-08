@@ -5,6 +5,8 @@ on:
   pull_request:
     types: [opened]
   push:
+    paths:
+    - '**.*'
 env:
   MY_GITHUB_TOKEN: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
 jobs:
