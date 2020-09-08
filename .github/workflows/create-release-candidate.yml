@@ -5,9 +5,9 @@ jobs:
   #Uses https://github.com/marketplace/actions/create-branch
   #Create a release branch with name "release-candidate"
   create-release-branch:
-      uses: peterjgrainger/action-create-branch@v1.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: peterjgrainger/action-create-branch@v1.0.0
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   createPullRequest:
     runs-on: ubuntu-latest
     steps:
