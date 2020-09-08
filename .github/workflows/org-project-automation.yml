@@ -1,4 +1,4 @@
-name: Auto Assign Issues and PRs to Main Org Project
+name: [Auto, Issues, PRs] add to Main Org Project
 on:
   issues:
     types: [opened]
