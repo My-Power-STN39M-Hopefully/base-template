@@ -4,16 +4,14 @@ on:
   issues:
     types: [opened]
   pull_request:
-    types: [opened, push]
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+    types: [opened]
+
 jobs:
-  assign_one_project:
+  automate-project-columns:
     runs-on: ubuntu-latest
-    name: Assign to Main Repo Project
     steps:
-    - name: Assign issues and pull request to project
-      uses: srggrs/assign-one-project-github-action@1.2.0
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/Cassio-is-Great/base-template/projects/1'
+      - uses: alex-page/github-project-automation-plus@v0.2.4
+        with:
+          project: 'https://github.com/Cassio-is-Great/base-template/projects/1'
+          column: 'To Do'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
