@@ -5,9 +5,10 @@ on:
       #Uses https://github.com/marketplace/actions/create-branch
       #Create a release branch with name "release-candidate"
       create-release-branch:
-        uses: peterjgrainger/action-create-branch@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps:
+          uses: peterjgrainger/action-create-branch@v1.0.0
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       name: create-pull-request workflow
       createPullRequest:
         runs-on: ubuntu-latest
@@ -30,4 +31,3 @@ on:
               release
               automated pr
             reviewers: Cassioblu55
-            
