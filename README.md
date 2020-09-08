@@ -15,16 +15,20 @@ _Must be done **once** when the **repo** is first created. Please remove instruc
 
 1. Update the project name in: `/.github/workflows/main-project-automation.yml`. Project name needs to be the link to a project **within** this repo.
 2. Update .vscode/settings.json colors to be different from other workspaces. Use [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) to change your colors easily.
-3. Add a dev-ops label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
+3. Add a dev-ops label: go to [labels](./labels) and add this to the labels:
     * Label name: dev-ops
     * Description: Dev Ops issue or pull request
     * Color: adfc7b
+3. Add a testing label: go to [labels](./labels) and add this to the labels:
+    * Label name: testing
+    * Description: Add testing procedure, either automated or manual 
+    * Color: c90290
 
 ## First Time Organization Setup
 _Must be done **once** for the **entire organization**. Please remove instructions from README.md once step is complete to avoid collisions_
 
 1. Create a user GitHub token [here](https://github.com/settings/tokens/new). Make sure to copy your new personal access token now. **You won’t be able to see it again!**
-2. Add token to: https://github.com/organizations/[organzation-name]/settings/secrets under the name: `AUTOMATE_ISSUES_PULL_REQUESTS`
+2. Add token to: [organization secret](../settings/secrets) under the name: `AUTOMATE_ISSUES_PULL_REQUESTS`
 3. Add GitHub app [auto-assign bot](https://github.com/apps/auto-assign) to https://github.com/organizations/[organzation-name]/settings/installations
 
 ## Base Template Features
