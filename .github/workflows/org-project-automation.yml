@@ -1,4 +1,4 @@
-name: "[Auto] Org Project Main add on Issues/PRs"
+name: "[A] Org Project Main add on Issues/PRs"
 on:
   issues:
     types: [opened]
