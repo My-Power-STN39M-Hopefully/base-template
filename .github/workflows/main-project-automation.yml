@@ -13,5 +13,5 @@ jobs:
       - uses: alex-page/github-project-automation-plus@v0.2.4
         with:
           project: 'https://github.com/Cassio-is-Great/base-template/projects/1'
-          column: 'To Do'
+          column: 'To do'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
