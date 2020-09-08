@@ -4,6 +4,7 @@ on:
   jobs:
     #Uses https://github.com/marketplace/actions/create-branch
     #Create a release branch with name "release-candidate"
+    name: create release branch
     create-release-branch:
       steps:
         uses: peterjgrainger/action-create-branch@v1.0.0
