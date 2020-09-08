@@ -5,8 +5,7 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
-  commit:
-    types: [push]
+  push:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 jobs:

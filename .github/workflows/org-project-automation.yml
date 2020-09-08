@@ -4,8 +4,7 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
-  commit:
-    types: [push]
+  push:
 env:
   MY_GITHUB_TOKEN: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
 jobs:
