@@ -28,10 +28,6 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-      - name: Switch to new branch
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ steps.branch.outputs.name }}
       - name: Create release notes file
         uses: "finnp/create-file-action@master"
         env:
@@ -41,8 +37,8 @@ jobs:
       - name: Add release notes file
         uses: EndBug/add-and-commit@v4 
         with:
-          cwd: ${{ steps.branch.outputs.name }}
           add: ./.releases/${{ steps.branch.outputs.name }}-notes.txt
           message: Add release notes for ${{ steps.branch.outputs.name }}
+          ref: ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
