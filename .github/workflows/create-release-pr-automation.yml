@@ -3,5 +3,7 @@ on:
   push:
     branches: "release-candidate-UTC-*"
 jobs:
-  job1:
-    - run: echo "foobar"
+  create-pull-request:
+    steps:
+      - name: Create pull request for release
+        run: echo "foobar"
