@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       - name: Add release notes
         run: |
-          touch .releases/${{ steps.branch.outputs.name }}-notes.txt
+          echo 'Release notes:'>.releases/${{ steps.branch.outputs.name }}-notes.txt
           git add .releases/release-UTC-${{ steps.branch.outputs.name }}-notes.txt
           git commit -m "release-UTC-${{ steps.branch.outputs.name }} added notes"
           git push origin release-candidate-UTC-${{ steps.branch.outputs.name }}
