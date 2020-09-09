@@ -35,9 +35,9 @@ jobs:
           FILE_DATA: "#Example file\nThis is an example"   
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Add release notes file
-        run: |
-          git add .releases/${{ steps.branch.outputs.name }}-notes.txt
-          git commit -m "Add release notes for ${{ steps.branch.outputs.name }}"
-          git push origin ${{ steps.branch.outputs.name }}
+        uses: EndBug/add-and-commit@v4 
+        with:
+          add: .releases/${{ steps.branch.outputs.name }}-notes.txt
+          message: Add release notes for ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
