@@ -19,7 +19,7 @@ jobs:
           git remote set-head origin master
           git pull-request -m "[A] release candidate ${{ steps.date.outputs.date }}
           
-          **test**" -l release, automated pr
+          **test**" -l release, automated pr -h master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Create Pull Request
