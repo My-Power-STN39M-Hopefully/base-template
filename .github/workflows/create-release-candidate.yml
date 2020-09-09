@@ -6,17 +6,10 @@ jobs:
   create-release-branch-and-pull-request:
     runs-on: ubuntu-latest
     steps:
+      - name: Create pull request
       - uses: actions/checkout@v2
         with:
           ref: development
-      - name: Create release candidate
-        uses: peterjgrainger/action-create-branch@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create pull request
-        uses: actions/checkout@v2
-        with:
-          ref: master
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
