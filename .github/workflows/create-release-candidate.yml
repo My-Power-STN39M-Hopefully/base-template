@@ -44,4 +44,4 @@ jobs:
           add: .releases/${{ steps.branch.outputs.name }}-notes.txt
           message: Add release notes for ${{ steps.branch.outputs.name }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.AUTOMATE_ISSUES_PULL_REQUESTS }}
