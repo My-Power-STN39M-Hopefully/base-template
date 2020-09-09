@@ -38,10 +38,10 @@ jobs:
           FILE_NAME: ".releases/${{ steps.branch.outputs.name }}-notes.txt"
           FILE_DATA: "#Example file\nThis is an example"   
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Add release notes file
-      #   uses: EndBug/add-and-commit@v4 
-      #   with:
-      #     add: .releases/${{ steps.branch.outputs.name }}-notes.txt
-      #     message: Add release notes for ${{ steps.branch.outputs.name }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add release notes file
+        uses: EndBug/add-and-commit@v4 
+        with:
+          add: .releases/${{ steps.branch.outputs.name }}-notes.txt
+          message: Add release notes for ${{ steps.branch.outputs.name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
