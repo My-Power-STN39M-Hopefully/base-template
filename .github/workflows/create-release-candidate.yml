@@ -12,7 +12,7 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%h:%M-%s')"
       - name: Make release branch
         run: |
-          git checkout origin development
+          git checkout origin/development
           git checkout -b release-candidate-${{ steps.date.outputs.date }}
           git push origin release-candidate-${{ steps.date.outputs.date }}
         env:
