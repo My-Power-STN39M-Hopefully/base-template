@@ -41,8 +41,8 @@ jobs:
       - name: Add release notes file
         uses: EndBug/add-and-commit@v4 
         with:
-          cwd: ./.releases/
-          add: ${{ steps.branch.outputs.name }}-notes.txt
+          cwd: ${{ steps.branch.outputs.name }}
+          add: ./.releases/${{ steps.branch.outputs.name }}-notes.txt
           message: Add release notes for ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
