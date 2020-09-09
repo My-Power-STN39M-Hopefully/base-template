@@ -25,6 +25,6 @@ jobs:
       - name: Setup Hub
         uses: Geertvdc/setup-hub@v1.0.0
       - name: Create pull request
-        run: hub pull-request -b master -m "\\[A\\] Release Candidate $(date +'%Y-%m-%d') \nAuto generated release branch from development" -l release, automated pr
+        run: hub pull-request -b master -m "[A] Release Candidate $(date +'%Y-%m-%d') \nAuto generated release branch from development" -l release,"automated pr"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
