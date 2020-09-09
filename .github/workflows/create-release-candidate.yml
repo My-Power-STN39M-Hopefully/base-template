@@ -13,26 +13,26 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
       - name: Create release branch name
-        id: branch_name
-        run: echo "::set-output name=branch_name::$(echo release-candidate-UTC-${{ steps.date.outputs.date }})"
+        id: branch
+        run: echo "::set-output name=name::$(echo release-candidate-UTC-${{ steps.date.outputs.date }})"
       - name: Make release branch
         run: |
-          git checkout -b ${{ steps.date.outputs.branch_name }}
-          git push -u origin ${{ steps.date.outputs.branch_name }}
+          git checkout -b ${{ steps.branch.outputs.name }}
+          git push -u origin ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Remove preexisting release notes for branch if exists
         run: |
-          if [ -f ${{ steps.date.outputs.branch_name }} ] ; then
-            rm .releases/${{ steps.date.outputs.branch_name }}-notes.txt
+          if [ -f ${{ steps.branch.outputs.name }} ] ; then
+            rm .releases/${{ steps.branch.outputs.name }}-notes.txt
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       - name: Add release notes
         run: |
-          touch .releases/${{ steps.date.outputs.branch_name }}-notes.txt
-          git add .releases/release-UTC-${{ steps.date.outputs.date }}-notes.txt
-          git commit -m "release-UTC-${{ steps.date.outputs.date }} added notes"
-          git push origin release-candidate-UTC-${{ steps.date.outputs.date }}
+          touch .releases/${{ steps.branch.outputs.name }}-notes.txt
+          git add .releases/release-UTC-${{ steps.branch.outputs.name }}-notes.txt
+          git commit -m "release-UTC-${{ steps.branch.outputs.name }} added notes"
+          git push origin release-candidate-UTC-${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
