@@ -33,3 +33,4 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request
           labels: release, automated pr
           reviewers: Cassioblu55
+          draft: true
