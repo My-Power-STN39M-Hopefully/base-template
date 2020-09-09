@@ -6,13 +6,15 @@ jobs:
   create-release-branch-and-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@development
+      - uses: actions/checkout@v1
+        with:
+          ref: development
       - name: Create release candidate
         uses: peterjgrainger/action-create-branch@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create pull request
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
         with:
           ref: master
       - name: Get current date
