@@ -40,4 +40,4 @@ jobs:
         with:
           ref: master
       - name: Create pull request
-        run: git pull-request -b ${{github.repository}}:${{ steps.branch.outputs.name }}
+        run: git request-pull -b ${{github.repository}}:${{ steps.branch.outputs.name }}
