@@ -10,7 +10,7 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
-      - name: Create release branch name
+]      - name: Create release branch name
         id: branch
         run: echo "::set-output name=name::$(echo release-candidate-UTC-${{ steps.date.outputs.date }})"
       - name: Make release branch
@@ -25,6 +25,6 @@ jobs:
       - name: Setup Hub
         uses: Geertvdc/setup-hub@v1.0.0
       - name: Create pull request
-        run: hub pull-request -b master -m "test"
+        run: hub pull-request -b master -m "[A] Release Candidate $(date +'%Y-%m-%d') \nAuto generated release branch from development" -l release, automated pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
