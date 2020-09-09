@@ -1,4 +1,4 @@
-name: '[M] Create Release Candidate Branch'
+name: '[A] Add PR for release branch'
 on:
   workflow_dispatch:
 jobs:
