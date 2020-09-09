@@ -3,17 +3,20 @@ on:
   workflow_dispatch:
 jobs:
   #Uses https://github.com/marketplace/actions/create-branch
-  create-release-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Create release candidate"
-        uses: peterjgrainger/action-create-branch@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  create-pull-request:
+  create-release-branch-and-pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: development
+      - name: Create release candidate
+        uses: peterjgrainger/action-create-branch@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create pull request
+        uses: actions/checkout@v2
+        with:
+          ref: master
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
@@ -22,8 +25,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
-          branch: release-candidate
-          base: master
+          base: release-candidate
           title: "[A] release candidate ${{ steps.date.outputs.date }}"
           body: |
             Pull request for release candidate ${{ steps.date.outputs.date }}
@@ -34,3 +36,4 @@ jobs:
           labels: release, automated pr
           reviewers: Cassioblu55
           draft: true
+          delete-branch: true
