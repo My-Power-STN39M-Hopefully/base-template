@@ -34,6 +34,10 @@ jobs:
           FILE_NAME: ".releases/${{ steps.branch.outputs.name }}-notes.txt"
           FILE_DATA: "#Example file\nThis is an example"   
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Switch to new branch
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.branch.outputs.name }}
       - name: Add release notes file
         uses: EndBug/add-and-commit@v4 
         with:
