@@ -19,22 +19,10 @@ jobs:
           git push -u origin ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create release notes file
-        uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: ".releases/${{ steps.branch.outputs.name }}-notes.txt"
-          FILE_DATA: "#Example file\nThis is an example"   
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Add release notes file
-        uses: EndBug/add-and-commit@v4 
-        with:
-          add: ./.releases/${{ steps.branch.outputs.name }}-notes.txt
-          message: Add release notes for ${{ steps.branch.outputs.name }}
-          ref: ${{ steps.branch.outputs.name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: ${{ steps.branch.outputs.name }}
+      - name: Setup Hub
+        uses: Geertvdc/setup-hub@v1.0.0
       - name: Create pull request
-        run: git request-pull -b "https://github.com/${{github.repository}}:${{ steps.branch.outputs.name }}"
+        run: hub pull-request -b master -m "test"
