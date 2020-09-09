@@ -6,8 +6,6 @@ jobs:
   create-release-branch-and-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Hub
-        uses: geertvdc/setup-hub@master
       - uses: actions/checkout@v2
         with:
           ref: development
@@ -16,12 +14,12 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
       - name: Make release branch
         run: |
-          hub checkout -b release-candidate-${{ steps.date.outputs.date }}
-          hub push -u origin release-candidate-${{ steps.date.outputs.date }}
-          hub remote set-head origin master
-          hub pull-request -m "[A] release candidate ${{ steps.date.outputs.date }}
+          git checkout -b release-candidate-${{ steps.date.outputs.date }}
+          git push -u origin release-candidate-${{ steps.date.outputs.date }}
+          git remote set-head origin master
+          git pull-request -m "[A] release candidate ${{ steps.date.outputs.date }}
           
-          **Test**" -l release, automated pr
+          **test**" -l release, automated pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Create Pull Request
