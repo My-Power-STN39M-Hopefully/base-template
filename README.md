@@ -37,10 +37,12 @@ _Must be done **once** for the **entire organization**. Please remove instructio
     1. _Bug Report_ - Create a bug report issue
     2. _Feature Request_ - Create feature request/enhancement
     3. _Dev Ops Request_ - Create a new development operations request, this can be sever management, user access item, workflow automation enhancement, or a report of issues going on with cloud infrastructure
+    4. _Test Reqyest_ - Create test automation or manual testing request
 2. **Workflows**
     1. _Auto Assign Issues and PRs to Main Org Project_ - Will link new issues and pull requests to: [Master Cassio is Great Project](https://github.com/orgs/Cassio-is-Great/projects/5)
     2. _Auto Assign Issues and PRs to Main Repo Project_ - Will link new issues and pull requests to project within this repo
-    2. _Auto Assign_ - Using [Auto Assign](https://github.com/apps/auto-assign) will assign the creator of a pull request to the author of the pull request
+    3. _Auto Assign_ - Using [Auto Assign](https://github.com/apps/auto-assign) will assign the creator of a pull request to the author of the pull request
+    4. _Create Release Candidate Branch_ - Runs manually, creates branch from selected branch, adds pull request for new branch for release canidate
 
 ### Created by:
 [Cassio Hudson](https://github.com/Cassioblu55)
