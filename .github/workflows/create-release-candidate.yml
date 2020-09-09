@@ -33,9 +33,6 @@ jobs:
           ref: ${{ steps.branch.outputs.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create pull request
-        run: |
-          git pull-request 
       - uses: actions/checkout@v2
         with:
           ref: master
