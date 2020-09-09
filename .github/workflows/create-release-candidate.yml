@@ -28,11 +28,10 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-      - name: Add release notes
-        run: |
-          echo 'Release notes:'>.releases/${{ steps.branch.outputs.name }}-notes.txt
-          git add .releases/release-UTC-${{ steps.branch.outputs.name }}-notes.txt
-          git commit -m "release-UTC-${{ steps.branch.outputs.name }} added notes"
-          git push origin release-candidate-UTC-${{ steps.branch.outputs.name }}
+      - name: Create file
+        uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME = ".releases/${{ steps.branch.outputs.name }}-notes.txt"
+          FILE_DATA = "#Example file\nThis is an example"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
