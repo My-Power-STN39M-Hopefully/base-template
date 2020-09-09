@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Create pull request
         uses: actions/checkout@v2
-        with:
-          ref: master
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
