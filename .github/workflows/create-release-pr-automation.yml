@@ -4,6 +4,7 @@ on:
     branches: "release-candidate-UTC-*"
 jobs:
   create-pull-request:
+    runs-on: ubuntu-latest
     steps:
       - name: Create pull request for release
         run: echo "foobar"

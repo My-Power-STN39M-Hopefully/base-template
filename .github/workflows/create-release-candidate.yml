@@ -16,5 +16,10 @@ jobs:
         run: |
           git checkout -b release-candidate-UTC-${{ steps.date.outputs.date }}
           git push -u origin release-candidate-UTC-${{ steps.date.outputs.date }}
+          touch .releases/release-UTC-${{ steps.date.outputs.date }}-notes.txt
+          rm .releases/release-UTC-${{ steps.date.outputs.date }}-notes.txt
+          git add .releases/release-UTC-${{ steps.date.outputs.date }}-notes.txt
+          git commit -m "release-UTC-${{ steps.date.outputs.date }} added notes"
+          git push origin release-candidate-UTC-${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
