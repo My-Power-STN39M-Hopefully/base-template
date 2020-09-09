@@ -14,7 +14,8 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
       - name: Create release branch name
         id: branch_name
-        run: echo "release-candidate-UTC-${{ steps.date.outputs.date }}"
+        # ::set-output name=mix-ecto_migrate::$(mix ecto.migrate)
+        run: echo "::set-output name=branch_name::$(release-candidate-UTC-${{ steps.date.outputs.date }})"
       - name: Make release branch
         run: |
           git checkout -b ${{ steps.date.outputs.branch_name }}
