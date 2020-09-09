@@ -25,7 +25,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
-          base: release-candidate
+          branch: release-candidate
+          base: master
           title: "[A] release candidate ${{ steps.date.outputs.date }}"
           body: |
             Pull request for release candidate ${{ steps.date.outputs.date }}
