@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
-          branch: release-candidate-${{ steps.date.outputs.date }}
+          #branch: release-candidate-${{ steps.date.outputs.date }}
           base: master
           title: "[A] release candidate ${{ steps.date.outputs.date }}"
           body: |
