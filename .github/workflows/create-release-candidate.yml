@@ -17,9 +17,7 @@ jobs:
           git checkout -b release-candidate-${{ steps.date.outputs.date }}
           git push -u origin release-candidate-${{ steps.date.outputs.date }}
           git remote set-head origin master
-          git pull-request -m "[A] release candidate ${{ steps.date.outputs.date }}
-          
-          **test**" -l release, automated pr -h master
+          git pull-request -m "[A] release candidate" -l release, automated pr
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Create Pull Request
