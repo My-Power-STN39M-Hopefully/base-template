@@ -1,0 +1,9 @@
+name: '[M] Create Release Candidate Branch'
+on:
+  push:
+    branches: "release-candidate-UTC-*"
+jobs:
+  create-pull-request:
+    steps:
+      - name: Create pull request for release
+        run: echo "foobar"
