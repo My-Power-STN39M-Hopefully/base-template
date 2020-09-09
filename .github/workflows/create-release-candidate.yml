@@ -19,7 +19,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           branch: release-candidate-${{ steps.date.outputs.date }}
-          base: development
           title: "[A] release candidate ${{ steps.date.outputs.date }}"
           body: |
             Pull request for release candidate ${{ steps.date.outputs.date }}
