@@ -39,3 +39,5 @@ jobs:
           git add .releases/${{ steps.branch.outputs.name }}-notes.txt
           git commit -m "Add release notes for ${{ steps.branch.outputs.name }}"
           git push origin ${{ steps.branch.outputs.name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
