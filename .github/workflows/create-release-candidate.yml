@@ -12,8 +12,9 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
-      - name: Make release branch
+      - name: Setup Hub
         uses: geertvdc/setup-hub@master
+      - name: Make release branch
         run: |
           hub checkout -b release-candidate-${{ steps.date.outputs.date }}
           hub push -u origin release-candidate-${{ steps.date.outputs.date }}
