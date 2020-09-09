@@ -12,7 +12,7 @@ jobs:
           ref: 'development'
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%HH-%MM-%ss')
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%HH-%MM-%ss')"
       - name: Make release branch
         uses: peterjgrainger/action-create-branch@v1.0.0
         env:
