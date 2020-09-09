@@ -1,0 +1,7 @@
+name: '[M] Create Release Candidate Branch'
+on:
+  push:
+    branches: "release-candidate-UTC-*"
+jobs:
+  job1:
+    - run: echo "foobar"

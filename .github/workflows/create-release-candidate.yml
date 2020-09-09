@@ -14,7 +14,7 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y-%m-%d-T%H.%M.%S')"
       - name: Make release branch
         run: |
-          git checkout -b release-candidate-${{ steps.date.outputs.date }}
-          git push -u origin release-candidate-${{ steps.date.outputs.date }}
+          git checkout -b release-candidate-UTC-${{ steps.date.outputs.date }}
+          git push -u origin release-candidate-UTC-${{ steps.date.outputs.date }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
