@@ -1,33 +1,46 @@
-# New Project
+# New Project Created from [Base Template](https://github.com/Cassio-is-Great/base-template) 
 
-This is a brand new repository that has been created.
+This is a brand new repository that has just been created for the organization Cassio-is-Great.
 
-## First Time Setup
-1. Set git remote head to developement: 
+## First Time Developer Setup
+_Must be done for each dev that works on the project. Please **do not** remove these instructions._
+
+1. Set git remote head to development: 
 ```bash
 git remote set-head origin development
 ```
-2. Update your .vscode/settings.json colors to be different from your other workspaces. Use the VsCode [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) to change your colors easily.
 
-3. Add a dev-ops label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
+## First Time Repo Setup
+_Must be done **once** when the **repo** is first created. Please remove instructions from README.md once step is complete to avoid collisions._
+
+1. Update the project name in: [main-project-automation.yml](../../tree/development/.github/workflows/main-project-automation.yml). Project name needs to be the link to a project **within** this repo.
+2. Update .vscode/settings.json colors to be different from other workspaces. Use [Peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) to change your colors easily.
+3. Add a dev-ops label: go to [labels](../../labels) and add this to the labels:
     * Label name: dev-ops
     * Description: Dev Ops issue or pull request
     * Color: adfc7b
-    
-4. (Optional) Add a models label: go to https://github.com/[orgainzation]/[repo]/labels and add this to the lables:
-    * Label name: models
-    * Description: Models enhancement
-    * Color: ea88d5
+3. Add a testing label: go to [labels](../../labels) and add this to the labels:
+    * Label name: testing
+    * Description: Add testing procedure, either automated or manual 
+    * Color: c90290
 
-## Out of the Box Features
+## First Time Organization Setup
+_Must be done **once** for the **entire organization**. Please remove instructions from README.md once step is complete to avoid collisions_
 
-1. **Issue Templates** - Default created issue templates
+1. Create a user GitHub token [here](https://github.com/settings/tokens/new). Make sure to copy your new personal access token now. **You won’t be able to see it again!**
+2. Add token to: https://github.com/organizations/[org-name]/settings/secrets under the name: `AUTOMATE_ISSUES_PULL_REQUESTS`
+3. Add GitHub app [auto-assign bot](https://github.com/apps/auto-assign) to https://github.com/organizations/[org-name]/settings/installations
+
+## Base Template Features
+
+1. **Issue Templates**
     1. _Bug Report_ - Create a bug report issue
     2. _Feature Request_ - Create feature request/enhancement
     3. _Dev Ops Request_ - Create a new development operations request, this can be sever management, user access item, workflow automation enhancement, or a report of issues going on with cloud infrastructure
-2. **Workflow**
-    1. _Auto Assign Issue to Project_ - Will link a project whenever a new issue is created and whenever a pull-request is made in master or development, the GitHub secret: `AUTOMATE_ISSUES_PULL_REQUESTS` created at: [GitHub Token Creation](https://github.com/settings/tokens/new) will allow for the linking of organization projects repo specific projects can just use the `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` that comes standard. By default this template links to: [Default Automation Project](https://github.com/orgs/Cassio-is-Great/projects/4). **Please update this as soon as possible.**
-    2. _Auto Assign_ - Using [Auto Assign](https://github.com/apps/auto-assign) (must be added to your organization or GitHub user) this repos default behavior is for it to assign the creator of a pull request to the author of the pull request
+2. **Workflows**
+    1. _Auto Assign Issues and PRs to Main Org Project_ - Will link new issues and pull requests to: [Master Cassio is Great Project](https://github.com/orgs/Cassio-is-Great/projects/5)
+    2. _Auto Assign Issues and PRs to Main Repo Project_ - Will link new issues and pull requests to project within this repo
+    2. _Auto Assign_ - Using [Auto Assign](https://github.com/apps/auto-assign) will assign the creator of a pull request to the author of the pull request
 
 ### Created by:
 [Cassio Hudson](https://github.com/Cassioblu55)
